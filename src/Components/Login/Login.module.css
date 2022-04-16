@@ -1,0 +1,35 @@
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+/* Como a parte principal da tela de login são os campos do forms e tudo o que 
+está em login, para adicionar uma imagem na primeira coluna do grid, basta 
+adicioná-la como pseudo element no before */
+.login::before {
+  display: block;
+  content: "";
+  background: url("../../Assets/login.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* Limitando o tamanho máximo do campo de forms */
+.forms {
+  max-width: 30rem;
+  padding: 1rem;
+  margin-top: 20vh;
+}
+
+@media (max-width: 40rem) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .login::before {
+    display: none;
+  }
+  .forms {
+    max-width: 100%;
+  }
+}
